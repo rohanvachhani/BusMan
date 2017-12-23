@@ -36,7 +36,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".payment" />
-        <activity android:name=".expense"></activity>
+        <activity android:name=".expense" />
+        <activity android:name=".AboutUs"></activity>
     </application>
 
 </manifest>

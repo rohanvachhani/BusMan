@@ -33,8 +33,8 @@ public class payment extends WithMenuActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
-
     //
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
