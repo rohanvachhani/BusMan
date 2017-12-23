@@ -23,11 +23,11 @@ public class MainActivity extends WithMenuActivity {
 
     DatabaseReference student_db;
 
-    /*@Override
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //finish();
-    }*/
+        finish();
+    }
     //Exit When Back and Set no History
 
     //for differnt font
@@ -35,7 +35,6 @@ public class MainActivity extends WithMenuActivity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
     //
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
