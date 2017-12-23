@@ -119,6 +119,9 @@ public class WithMenuActivity extends AppCompatActivity {
                 alert1.show();
                 break;
 
+            case R.id.user:
+                startActivity(new Intent(getApplicationContext(), expense.class));
+                finish();
             default:
                 return super.onOptionsItemSelected(item);
         }

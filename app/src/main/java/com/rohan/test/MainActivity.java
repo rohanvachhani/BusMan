@@ -94,11 +94,6 @@ public class MainActivity extends WithMenuActivity {
         mob.setText("");
         fees.setText("");
         spinner.setSelection(0);
-
-        /*finish();
-        startActivity(getIntent());*/
-
-
     }
 
 }
