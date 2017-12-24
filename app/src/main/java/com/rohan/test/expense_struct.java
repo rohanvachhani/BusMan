@@ -42,12 +42,13 @@ public class expense_struct extends ArrayAdapter<User> {
         TextView t_v_email = listViewItem.findViewById(R.id.u_email);
         TextView t_v_amount = listViewItem.findViewById(R.id.amount_paid);
         TextView t_v_desc = listViewItem.findViewById(R.id.desc);
-        TextView date = listViewItem.findViewById(R.id.date);
+        TextView t_v_date = listViewItem.findViewById(R.id.date);
 
         final User user = userList.get(position);
         t_v_email.setText(user.getUser_email());
         t_v_amount.setText(Integer.toString(user.getPayment()));
         t_v_desc.setText(user.getDesc());
+        t_v_date.setText(user.getDate());
 
 
         return listViewItem;
