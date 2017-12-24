@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -38,6 +39,7 @@ public class Display extends WithMenuActivity implements Serializable {
     public EditText search;
     private List_item adapter;
     private Button btn_update, btn_delete;
+    private ImageButton b_search;
 
 
     //for differnt font
@@ -62,6 +64,8 @@ public class Display extends WithMenuActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
+        b_search = findViewById(R.id.srch_p_point);
+
         l_v_student = findViewById(R.id.student_list);
 
         databaseStudent = FirebaseDatabase.getInstance().getReference("student_table");
@@ -73,6 +77,13 @@ public class Display extends WithMenuActivity implements Serializable {
         progressBar = findViewById(R.id.progressBar);
 
         /*adapter = new List_item(Display.this, studentList);*/
+
+        b_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.filter_button();
+            }
+        });
 
 
         search.addTextChangedListener(new TextWatcher() {

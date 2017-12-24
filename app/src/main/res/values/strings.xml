@@ -33,9 +33,26 @@
     <string name="pickup_point_prompt">Choose a pickup point</string>
 
     <string-array name="pickup_points">
-        <item>katargam</item>
-        <item>varachha</item>
-        <item>dabholi</item>
+        <item>Singanpor</item>
+        <item>Dabholi</item>
+        <item>Niru farm</item>
+        <item>Aambatalavadi</item>
+        <item>Gajera school</item>
+        <item>Gaushala</item>
+        <item>Minibazar</item>
+        <item>Baroda</item>
+        <item>Hirabaug</item>
+        <item>Kapodra</item>
+        <item>Bamba gate</item>
+        <item>CNG</item>
+        <item>Chowpati</item>
+        <item>Nana Varachha</item>
+        <item>Simada</item>
+        <item>Jakatnaka</item>
+        <item>Navjeevan</item>
+        <item>Shyamdham mandir</item>
+        <item>Pasodara</item>
+        <item>Kamrej</item>
     </string-array>
 
 

@@ -7,13 +7,25 @@
     tools:context="com.rohan.test.Display">
 
     <!-- edit-text for Search -->
-    <EditText
-        android:id="@+id/search"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search student">
+        android:orientation="horizontal">
 
-    </EditText>
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="290sp"
+            android:layout_height="wrap_content"
+            android:hint="Search student">
+
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/srch_p_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_filter_list" />
+    </LinearLayout>
 
 
     <ListView

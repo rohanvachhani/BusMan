@@ -75,6 +75,16 @@ public class List_item extends ArrayAdapter<Student> {
         notifyDataSetChanged();
     }
 
+    public void filter_button() {
+        studentList.clear();
+        for (Student sp : arraylist) {
+            if ((sp.getFees() - sp.getPaid_fees()) != 0) {
+                studentList.add(sp);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
 
 }
 
