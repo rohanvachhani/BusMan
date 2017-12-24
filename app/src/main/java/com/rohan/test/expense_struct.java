@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class expense_struct extends ArrayAdapter<User> {
     private Activity context;
     private List<User> userList;
     private ArrayList<User> arraylist;
+    private Date date;
    /* private Button b_up;*/
 
     public expense_struct(Activity context, List<User> userList) {
@@ -40,6 +42,7 @@ public class expense_struct extends ArrayAdapter<User> {
         TextView t_v_email = listViewItem.findViewById(R.id.u_email);
         TextView t_v_amount = listViewItem.findViewById(R.id.amount_paid);
         TextView t_v_desc = listViewItem.findViewById(R.id.desc);
+        TextView date = listViewItem.findViewById(R.id.date);
 
         final User user = userList.get(position);
         t_v_email.setText(user.getUser_email());

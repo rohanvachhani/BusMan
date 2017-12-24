@@ -5,16 +5,18 @@ package com.rohan.test;
  */
 
 public class User {
-    private String user_email, desc;
+    private String user_email, desc, date;
     private int payment;
 
-    public User(){
+    public User() {
 
     }
-    public User(String user_email, int payment, String desc) {
+
+    public User(String user_email, int payment, String desc, String date) {
         this.user_email = user_email;
         this.payment = payment;
         this.desc = desc;
+        this.date = date;
 
     }
 
@@ -28,5 +30,9 @@ public class User {
 
     public int getPayment() {
         return payment;
+    }
+
+    public String getDate() {
+        return date;
     }
 }

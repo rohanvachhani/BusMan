@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -85,7 +86,8 @@ public class expense extends WithMenuActivity {
 
         String amount_paid = e_t_amount.getText().toString();
         String desc = e_t_desc.getText().toString().trim();
-        User user = new User(user_logged_in, Integer.parseInt(amount_paid), desc);
+        String date = Calendar.getInstance().getTime().toString();
+        User user = new User(user_logged_in, Integer.parseInt(amount_paid), desc, date);
         databaseReference_expance.child(u_id).setValue(user);
         Toast.makeText(getApplicationContext(), "Details added", Toast.LENGTH_SHORT).show();
     }
