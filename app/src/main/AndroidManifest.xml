@@ -35,9 +35,13 @@
             android:label="Student&apos;s Info."
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".payment" />
-        <activity android:name=".expense" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".payment"
+            android:label="Payment"/>
+        <activity android:name=".expense"
+            android:label="Expense"/>
+        <activity
+            android:name=".AboutUs"
+            android:label="About Us"></activity>
     </application>
 
 </manifest>
