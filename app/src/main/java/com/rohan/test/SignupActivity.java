@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignupActivity extends AppCompatActivity {
@@ -26,7 +28,7 @@ public class SignupActivity extends AppCompatActivity {
     private Button b_sign_in, b_sign_up, b_forget_pass;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-
+    private ArrayList<String> r_users;
 
     //for differnt font
     protected void attachBaseContext(Context newBase) {
@@ -40,6 +42,16 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         auth = FirebaseAuth.getInstance();
+
+        //define the list of the users who can register...!
+        r_users = new ArrayList<>();
+        r_users.add("rohan.vachhani5@gmail.com");
+        r_users.add("dobariyagaurang@gmail.com");
+        r_users.add("piyushthummar772@gmail.com");
+        r_users.add("iamnikunjvaghasiya@gmail.com");
+        r_users.add("rakholiyasaurav531@gmail.com");
+        r_users.add("jaiminvaghasiya123@gmail.com");
+        r_users.add("dtejas8980@gmail.com");
 
         b_sign_in = findViewById(R.id.btn_sign_in);
         b_sign_up = findViewById(R.id.btn_sign_up);
@@ -59,6 +71,13 @@ public class SignupActivity extends AppCompatActivity {
         b_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //first check if user is allow to register or not????
+                if (!(r_users.contains(e_email.getText().toString().trim()))) {
+                    Toast.makeText(getApplicationContext(), "Not allowed...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 String mail_id = e_email.getText().toString().trim();
                 String passwd = e_pass.getText().toString().trim();
 
