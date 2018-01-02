@@ -195,15 +195,15 @@ public class Display extends WithMenuActivity implements Serializable {
     protected void onStart() {
         super.onStart();
         progressBar.setVisibility(View.VISIBLE);
-        databaseStudent.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-               /* Toast.makeText(getApplicationContext(),"getting the data...",Toast.LENGTH_SHORT).show();*/
-                studentList.clear();
-                for (DataSnapshot student_snapshot : dataSnapshot.getChildren()) {
-                    Student student = student_snapshot.getValue(Student.class);
-                    studentList.add(student);
-                }
+            databaseStudent.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                   /* Toast.makeText(getApplicationContext(),"getting the data...",Toast.LENGTH_SHORT).show();*/
+                    studentList.clear();
+                    for (DataSnapshot student_snapshot : dataSnapshot.getChildren()) {
+                        Student student = student_snapshot.getValue(Student.class);
+                        studentList.add(student);
+                    }
 
 
                 adapter = new List_item(Display.this, studentList);

@@ -14,8 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class WithMenuActivity extends AppCompatActivity {
 
@@ -86,7 +84,7 @@ public class WithMenuActivity extends AppCompatActivity {
                 alert.show();
                 break;
 
-            case R.id.delete_database:
+            /*case R.id.delete_database:
                 final DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -117,7 +115,9 @@ public class WithMenuActivity extends AppCompatActivity {
 
                 AlertDialog alert1 = builder.create();
                 alert1.show();
+
                 break;
+                */
 
             case R.id.user:
                 startActivity(new Intent(getApplicationContext(), expense.class));

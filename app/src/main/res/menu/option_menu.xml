@@ -23,11 +23,11 @@
         android:orderInCategory="3"
         android:title="Delete Account"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/delete_database"
-        android:orderInCategory="4"
-        android:title="Delete Database"
-        app:showAsAction="never" />
+    <!-- <item
+         android:id="@+id/delete_database"
+         android:orderInCategory="4"
+         android:title="Delete Database"
+         app:showAsAction="never" />   -->
     <item
         android:id="@+id/about_us"
         android:orderInCategory="5"

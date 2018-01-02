@@ -67,7 +67,7 @@ public class List_item extends ArrayAdapter<Student> {
             studentList.addAll(arraylist);
         } else {
             for (Student wp : arraylist) {
-                if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText) || wp.getPickup_point().toLowerCase(Locale.getDefault()).contains(charText)) {
+                if (wp.getName().toLowerCase(Locale.getDefault()).contains(charText) || wp.getPickup_point().toLowerCase(Locale.getDefault()).contains(charText) || wp.getS_id().contains(charText)) {
                     studentList.add(wp);
                 }
             }

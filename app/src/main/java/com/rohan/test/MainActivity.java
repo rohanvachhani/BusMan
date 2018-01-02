@@ -9,8 +9,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -22,6 +28,8 @@ public class MainActivity extends WithMenuActivity {
     private Button b_submit;
 
     DatabaseReference student_db;
+
+    private List<Student> studentList;
 
     @Override
     public void onBackPressed() {
@@ -78,9 +86,39 @@ public class MainActivity extends WithMenuActivity {
             }
         });
 
+
+        //
+        studentList = new ArrayList<>();
+        student_db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                   /* Toast.makeText(getApplicationContext(),"getting the data...",Toast.LENGTH_SHORT).show();*/
+                studentList.clear();
+                for (DataSnapshot student_snapshot : dataSnapshot.getChildren()) {
+                    Student student = student_snapshot.getValue(Student.class);
+                    studentList.add(student);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void add_data(String s_id_ip, String name_ip, String mobile_no_ip, int fees_ip, String pickup_point_ip) {
+
+
+        for (Student s : studentList) {
+            if (s.getS_id().equals(s_id_ip)) {
+                Toast.makeText(getApplicationContext(), "Student Already Exits...!!!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
 
         String id = student_db.push().getKey();
         Student s1 = new Student(id, s_id_ip, name_ip, mobile_no_ip, fees_ip, pickup_point_ip);
@@ -94,9 +132,10 @@ public class MainActivity extends WithMenuActivity {
         mob.setText("");
         fees.setText("");
         spinner.setSelection(0);
-    }
 
+    }
 }
+
 
 
 
